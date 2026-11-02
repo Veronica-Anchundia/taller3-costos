@@ -8,6 +8,9 @@
 **Docente:** Ing. Hamilton Villamar  
 **Fecha:** 31 de octubre de 2026  
 
+**Repositorio:** [taller3-costos en GitHub](https://github.com/narcisogalarza2006-boop/taller3-costos)  
+**Pull request:** [Rama taller-03 hacia main](https://github.com/narcisogalarza2006-boop/taller3-costos/pull/1)
+
 Calculadora de costos de producción para una finca ecuatoriana que produce banano, cacao y arroz.
 
 ## Integrantes y roles
@@ -22,10 +25,9 @@ Calculadora de costos de producción para una finca ecuatoriana que produce bana
 
 ## Descripción
 
-El programa calcula los costos de producción de lotes agrícolas con distintas estrategias intercambiables. Aplica el patrón **Strategy**, expresiones lambda, interfaces funcionales, una jerarquía sellada de cultivos, *pattern matching* y `Optional`.
+El programa calcula los costos de producción de lotes agrícolas con distintas estrategias intercambiables. Está implementado en Java 21 y aplica el patrón **Strategy**, expresiones lambda, interfaces funcionales, una jerarquía sellada de cultivos, *pattern matching* y `Optional`.
 
-Captura 
-<img width="1910" height="1019" alt="image" src="https://github.com/user-attachments/assets/9e33f7d2-8cc4-420a-a77c-92f2c05f2a36" />
+El diseño separa los cultivos y los lotes del cálculo de costos para poder aplicar distintas fórmulas.
 
 ## Estrategias de cálculo
 
@@ -37,23 +39,23 @@ Captura
 
 ## Tecnologías y requisitos
 
-- **Java JDK 21**
-- **Apache Maven 3.9 o superior**
-- **JUnit 5** para las pruebas automatizadas
-- **IntelliJ IDEA** (opcional, para abrir y ejecutar el proyecto)
+- Java JDK 21.
+- Apache Maven 3.9 o superior.
+- JUnit 5 para las pruebas automatizadas.
+- IntelliJ IDEA, opcional para abrir y ejecutar el proyecto.
 
-Verifica las instalaciones desde una terminal:
-
-<img width="1918" height="1015" alt="image" src="https://github.com/user-attachments/assets/d1279181-d6e6-465d-8d27-0435a443b314" />
-
-<img width="1919" height="1000" alt="image" src="https://github.com/user-attachments/assets/d15d1a59-d520-4e31-ade1-bab03f848d1e" />
-
+Verifica las versiones instaladas desde una terminal:
 
 ```bash
 java -version
 mvn -version
+```
+
 Java debe mostrar la versión 21 y Maven la versión 3.9 o superior.
-Estructura del proyecto
+
+## Estructura del proyecto
+
+```text
 taller3-costos/
 ├── src/
 │   ├── main/java/ec/uagraria/costos/
@@ -69,32 +71,59 @@ taller3-costos/
 │   │   └── Main.java
 │   └── test/java/ec/uagraria/costos/
 │       └── CalculadoraCostosTest.java
+├── .gitignore
 ├── pom.xml
 └── README.md
-Compilar el proyecto
-Abre una terminal en la carpeta donde está pom.xml y ejecuta:
+```
+
+## Compilar el proyecto
+
+Abre una terminal en la carpeta del proyecto, donde está el archivo `pom.xml`, y ejecuta:
+
+```bash
 mvn clean compile
-Ejecutar las pruebas
-El proyecto incluye 14 pruebas automatizadas con JUnit 5:
+```
+
+## Ejecutar las pruebas
+
+El proyecto incluye 14 pruebas automatizadas con JUnit 5. Para ejecutarlas, escribe:
+
+```bash
 mvn clean test
-Si Maven termina con BUILD SUCCESS, las pruebas pasaron correctamente.
-Ejecutar el programa
-Para correr la clase principal:
+```
+
+Si Maven termina con `BUILD SUCCESS`, las pruebas pasaron correctamente.
+
+En IntelliJ IDEA también puedes abrir `CalculadoraCostosTest.java`, hacer clic derecho sobre el archivo y seleccionar **Run**.
+
+## Ejecutar el programa
+
+Para iniciar la demostración desde la terminal:
+
+```bash
 mvn exec:java
-En IntelliJ IDEA también puedes abrir Main.java y pulsar el botón verde Run. Para ejecutar las pruebas, abre CalculadoraCostosTest.java, haz clic derecho y selecciona Run.
-Resultados verificados
+```
+
+En IntelliJ IDEA, abre `Main.java` y pulsa el botón verde **Run**.
+
+## Resultados verificados
+
 Para un lote de banano de 4 hectáreas y uno de cacao orgánico de 2,5 hectáreas:
-Caso	Resultado
-Calculadora sin estrategia	Optional.empty
-Costo directo del banano	USD 744,00
-Insumos más mano de obra	USD 2.076,00
-Costo por hectárea	USD 519,00
-Subsidio del 20 % a la urea	USD 1.998,00
-Costo con IVA del 15 %	USD 2.387,40
-Jornales por hectárea del cacao orgánico	25
-Insumos más mano de obra del cacao orgánico	USD 1.612,75
 
+| Caso | Resultado |
+|---|---:|
+| Calculadora sin estrategia | `Optional.empty` |
+| Costo directo del banano | USD 744,00 |
+| Insumos más mano de obra | USD 2.076,00 |
+| Costo por hectárea | USD 519,00 |
+| Subsidio del 20 % a la urea | USD 1.998,00 |
+| Costo con IVA del 15 % | USD 2.387,40 |
+| Jornales por hectárea del cacao orgánico | 25 |
+| Insumos más mano de obra del cacao orgánico | USD 1.612,75 |
 
-Repositorio y pull request
-- Repositorio en GitHub
--https://github.com/narcisogalarza2006-boop/taller3-costos/pull/1
+##Captura 
+<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/2fb7c70b-74d7-45c3-85e5-8f0e4e80d6b8" />
+
+## Flujo de trabajo con Git
+
+El desarrollo se realizó en la rama `taller-03` y se abrió un pull request hacia `main`. El grupo distribuyó las responsabilidades entre coordinación, desarrollo y revisión de calidad.
