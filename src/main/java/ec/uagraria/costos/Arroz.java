@@ -8,3 +8,4 @@ public record Arroz(int ciclosPorAnio) implements Cultivo {
         return "Arroz (" + ciclosPorAnio + " ciclos/año)";
     }
 }
+
